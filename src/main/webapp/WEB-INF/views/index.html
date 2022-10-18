@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>hello world</h1>
+<form action="/convert" method="post" th:object="${money}">
+    <div>
+        <span>USD:</span>
+        <input th:field="*{usd}">
+    </div>
+    <div>
+        <span>RATE:</span>
+        <input th:field="*{rate}">
+    </div>
+    <div>
+        <button type="submit" value="convert">convert</button>
+    </div>
+</form>
+  <div>
+      <span th:text="${money.getUsd()}"></span>
+      USD = <span th:text="${money.getVnd()}"></span>VND
+  </div>
+
+
+</body>
+</html>
